@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://guihaohuai.github.io">
-  <title>Hello World | Huai Blog</title>
+  <title>再读西瓜书-传统机器学习方法 | Huai Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="@[TOC] 引言&amp;emsp;&amp;emsp;这一次读西瓜书，主要是复习传统的机器学习方法。原书作为入门教材，隐藏或略去一些细节，对工程实现不利。从学术的角度，教材求全讲述尽可能多的方法，又不可避免掩盖了一些工业实现的优劣比较。这次复习尽可能对此进行补充，结果将在另一篇文章以表格形式展现。&amp;emsp;&amp;emsp;运用相关知识时如果观看表格不能很好回忆起，就来看这篇文章。这篇文章是重翻西瓜书时做的一些简">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://guihaohuai.github.io/2022/05/25/hello-world/index.html">
+<meta property="og:title" content="再读西瓜书-传统机器学习方法">
+<meta property="og:url" content="https://guihaohuai.github.io/2022/06/11/%E5%86%8D%E8%AF%BB%E8%A5%BF%E7%93%9C%E4%B9%A6-%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="Huai Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="@[TOC] 引言&amp;emsp;&amp;emsp;这一次读西瓜书，主要是复习传统的机器学习方法。原书作为入门教材，隐藏或略去一些细节，对工程实现不利。从学术的角度，教材求全讲述尽可能多的方法，又不可避免掩盖了一些工业实现的优劣比较。这次复习尽可能对此进行补充，结果将在另一篇文章以表格形式展现。&amp;emsp;&amp;emsp;运用相关知识时如果观看表格不能很好回忆起，就来看这篇文章。这篇文章是重翻西瓜书时做的一些简">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-25T12:42:16.835Z">
-<meta property="article:modified_time" content="2022-05-26T07:15:20.573Z">
+<meta property="article:published_time" content="2022-06-11T10:57:55.465Z">
+<meta property="article:modified_time" content="2022-06-11T11:54:28.343Z">
 <meta property="article:author" content="Gui Haohuai">
+<meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Huai Blog" type="application/atom+xml">
@@ -65,7 +66,7 @@
 	        
 			</ul>
 		</nav>
-		    总文章数 2
+		    总文章数 3
     </nav>
 		<nav class="header-smart-menu">
     		
@@ -160,40 +161,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-再读西瓜书-传统机器学习方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      再读西瓜书-传统机器学习方法
     </h1>
   
 
         
-        <a href="/2022/05/25/hello-world/" class="archive-article-date">
-  	<time datetime="2022-05-25T12:42:16.835Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
+        <a href="/2022/06/11/%E5%86%8D%E8%AF%BB%E8%A5%BF%E7%93%9C%E4%B9%A6-%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2022-06-11T10:57:55.465Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><span id="more"></span>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <p>@[TOC]</p>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>&emsp;&emsp;这一次读西瓜书，主要是复习传统的机器学习方法。原书作为入门教材，隐藏或略去一些细节，对工程实现不利。从学术的角度，教材求全讲述尽可能多的方法，又不可避免掩盖了一些工业实现的优劣比较。这次复习尽可能对此进行补充，结果将在另一篇文章以表格形式展现。<br><br>&emsp;&emsp;运用相关知识时如果观看表格不能很好回忆起，就来看这篇文章。这篇文章是重翻西瓜书时做的一些简单笔记和梳理，主要记录传统机器学习方法，略去了强化学习等以及特征工程的内容。按照不同的任务目标进行梳理，有分类、回归、聚类。其中分类中可多分类的会在表格中标记出。回归只介绍部分简单模型，不包括分类模型的相关变种。聚类由于评判标准不统一，便不为了求全过多赘述。只有任务目标一致的模型才有一起对比的意义。此外讲述模型的性能评价，此部分与模型训练调整密切相关。</p>
+<span id="more"></span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="模型评价"><a href="#模型评价" class="headerlink" title="模型评价"></a>模型评价</h2><h3 id="数据划分"><a href="#数据划分" class="headerlink" title="数据划分"></a>数据划分</h3><p>过拟合不可避免只能减缓<br>测试集，验证集，训练集（记得课本，作业，考试的比喻）<br><mark>留出法</mark>：重复留出取平均，数据有限时，训练集选择2/3-4/5（2:1-4:1）<br><mark>k折交叉验证</mark>：k折中要分布一致（分层抽样）。即便k折也要重复多次进行。前面2/3-4/5针对小数据说，大数据量10折也很常用。<br><mark>自助法</mark>：有放回重复抽取，也会有30%往上的数据未被选作测试集。缺点是不能保证训练集测试集同分布。优点是维持了训练集的数量适合小数据集以及集成。</p>
+<h3 id="性能度量"><a href="#性能度量" class="headerlink" title="性能度量"></a>性能度量</h3><p><mark>回归</mark>：均方误差<br><mark>二分类</mark>：</p>
+<ol>
+<li> 错误率=错误数/总数   精度=正确数/总数</li>
+<li> 混淆矩阵  </li>
+<li>  P-C曲线（基于查全与查准的矛盾）</li>
+</ol>
+<ul>
+<li>面积全覆盖  -&gt;  平衡点  -&gt;  F1 score  -&gt;  Fβ  score   </li>
+</ul>
+<ol start="4">
+<li> ROC（基于查全/召回/灵敏度与假阳的矛盾）</li>
+</ol>
+<ul>
+<li>面积AUC</li>
+</ul>
+<p>值得注意，P-C和ROC都是一种对排序的评价，需要假阳率等会因为阈值而变化，我个人用极限的方法去了解比较容易，这里不细讲。</p>
+<p><mark>多分类</mark>：<br>Macro F1：n分类等同n个二分类，分别计算F1，n个F1取均值。（受样本数量少的类别影响大）<br>Micro F1：n分类等同n个二分类，将混淆矩阵叠加，计算F1。</p>
+<h3 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h3><p>&emsp;&emsp;即便A模型的性能度量的多组结果或平均结果比B模型好，也不能证明A就比B好。因为性能度量的结果是随机变量。假设A，B同分布，各自取得有限的一组数据，做均值也不见得就相等，等不到AB一样的结论。所以严谨的方法是做假设检验，在一定置信的情况下说明哪个模型更好，但实际上仿佛少有人严谨到这样去做。</p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="贝叶斯分类"><a href="#贝叶斯分类" class="headerlink" title="贝叶斯分类"></a>贝叶斯分类</h3><p><mark>朴素贝叶斯</mark>（了解贝叶斯公式就可以理解）<br>半朴素贝叶斯（独依赖+集成）<br>*贝叶斯网<br><mark>EM算法</mark>（可以填充缺省值）<br>&emsp;&emsp;<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/78311644">EM具体例子</a><br>&emsp;&emsp;<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_38206214/article/details/81431932">EM大部分推导</a><br>&emsp;&emsp;<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39895167/article/details/110647994?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-1-110647994-blog-81431932.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-1-110647994-blog-81431932.pc_relevant_default&utm_relevant_index=2">关键部分解释</a><br>让下界提升的过程，迫使极值也在提升。</p>
+<h3 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h3><p><mark>证明</mark><br>&emsp;&emsp;<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/38586401">拉格朗日乘子法</a>（注意这里是等式约束的拉格朗日条件）<br>&emsp;&emsp;<a target="_blank" rel="noopener" href="https://blog.csdn.net/yyhhlancelot/article/details/91040378">kkt条件</a><br>&emsp;&emsp;<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1077268">计算λ/a之前，拉格朗日到对偶条件</a>（原问题转化求λ，关键是原问题满足slater）<br>&emsp;&emsp;<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/29212107">SMO求解λ加速</a><br>&emsp;&emsp;但是SVM只能解决线性可分的问题。（异或就解决不了）不过可以证明：一定存在一个高维空间，让问题变得线性可分。于是引出核函数的内容。<br><mark>核函数</mark><br>&emsp;&emsp;当不能保证当前空间线性可分，就把输入维度扩大，在高维上可以线性可分。当确定某种扩为方法，后面计算的时候就有了相应的优化方法（计算方面的优化，称核函数）。所以当我们选择某一个核函数，就是选择了某一种扩维，更换空间的方法。这里的超参就是选择核函数。但是这根本没法展示或想象（高维哦），也不知道那个是对的。<br><mark>软间隔</mark><br>&emsp;&emsp;核函数让所有训练样本线性可分了，可能是因为过拟合，而不是模型有多好。要允许一些样本不必被分开，就是所谓软间隔。具体的实现方法是通过改造损失函数实现的（所谓正则化），这个时候无非正则化使用的函数成为了超参（以及惩罚系数C）。使用log则接近逻辑回归，但是这种情况下的SVM不如逻辑回归好。</p>
+<h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><p><mark>伪代码及树模型更新</mark>  </p>
+<p>&emsp;&emsp;观看西瓜书上的伪代码，可以知道关键点一是何时递归结束获得子节点，但更重要的关键点二是如何选择当前节点用来划分的属性。学过信息论我更愿意<mark>用降低复杂度来解释这种划分方式的进步过程</mark>。最开始用熵增益，无非是用熵衡量复杂度，减小的复杂度越大越好，该方法被<mark>ID3</mark>采用。后来发现这种方法偏爱选择类别多的特征，即类别多的特征往往有更大的信息增益。考虑到类别多的属性，特征内的复杂度大（前面的复杂度针对目标特征说的），这样用信息增益除以特征内复杂度即增益率，就可以减少对多类别特征的偏爱，该方法被<mark>C4.5</mark>采用。但是矫枉过正又偏爱类别少的特征。于是又产生了<mark>CART</mark>使用增益率，用随机抽取两个样本同类别的概率来类比复杂度，概率越大，说明样本越纯粹，复杂度越小，所以选择基尼系数小的特征。  </p>
+<p>&emsp;&emsp;上述是西瓜书中用以串联三种算法更新的思路历程。但是值得补充的是，每次进步不只是属性判别方法上的进步。每次进步都要针对上一个模型的缺点来补充。ID3存在着无法处理连续变量的问题，总不能每一个连续值发展一个分支，在C4.5用阈值进行类别划分得到解决。而且划分方式也动了一些心思来减少计算量<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1635233">[link]</a>。到了CART，在处理连续值上允许多次划分，即已经选作节点的连续特征，后文仍可能用来进行划分<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/139523931">[link]</a>。</p>
+<p><mark>剪枝</mark></p>
+<p>&emsp;&emsp;分为预剪枝和后剪枝。预剪枝就是开始时阻止这个节点生长，如叶节点数上限，最大深度等。后剪枝就长成再剪，用某一种判断方式，参数是选择某种方法，灵活性有限。</p>
+<h3 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h3><p>西瓜书该算法讲述不超2页，<mark>邻居投票</mark>就可以很好解释这个算法。</p>
+<h3 id="LR"><a href="#LR" class="headerlink" title="LR"></a>LR</h3><p>西瓜书这部分讲述也不多。<br>&emsp;&emsp;介绍<mark>感知机和逻辑回归</mark>的不同，前者阶跃函数后者sigmoid函数，导致后者的函数性能比较好，作为凸函数符合某种最优化理论。但我觉得这种讨论意义不大与其是说在讨论模型，不如说在讨论函数。值得注意的是提到，可以证明只要网络够深，层数够多可以拟合无限复杂的函数。<br>&emsp;&emsp;然后讲<mark>BP反向传播</mark>，和一般链式求导的区别是可以减少计算。<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/44138371?utm_source=wechat_session&utm_medium=social&utm_oi=982738800916725760&utm_campaign=shareopn">link</a><br>&emsp;&emsp;然后讲如何<mark>避免局部最优</mark>，是一个好问题，不过我无法确定真正工程上的处理方法</p>
+<h3 id="集成—RF"><a href="#集成—RF" class="headerlink" title="集成—RF"></a>集成—RF</h3><p>&emsp;&emsp;集成关键的思想就是<mark>好而不同</mark>，bagging是全校前十对答案肯定结果更准。</p>
+<p>&emsp;&emsp;<mark>如何保证好</mark>，那就是自助采样让数据数量上充足。保证好了，也需要一定程度保证不同吧。<mark>如何保证不同</mark>，样本不同，属性不同，（输出不同），参数不同对应就可以看到随机森林的雏形了。自助采样让样本不同，划分属性从子集中找让属性不同，不同基决策树剪枝不同参数就不同了。 </p>
+<p>&emsp;&emsp;然后再考虑一下最后前十<mark>如何统一答案</mark>。回归求均值，当然可以加权。分类可以投票，过半为答案，或者多数为答案，当然也可以加权。一种比较有意思就是加权也让机器学习算法来决定，称stacking。注意一下stacking用验证集产生新的数据集。  </p>
+<p>&emsp;&emsp;一点感想：集成关键的思想就是好而不同，但是好和不同互相矛盾。好无非是资源更多的倾斜，如更多数据；不同就是资源的划分，越不同划分数据越少。无论最开始想找好还是不同，最后肯定是互相弥补折中。但总有个最开始的基本的资源上的倾斜策略。比如最开始就确定要好，那就是一个学校培养出来的前十，就是bagging。如果最开始确定，新来的是用来弥补前人的缺陷的，那就是注重不同，就是boosting。</p>
+<h3 id="集成—Adaboost"><a href="#集成—Adaboost" class="headerlink" title="集成—Adaboost"></a>集成—Adaboost</h3><p>&emsp;&emsp;Boosting是减小偏差，一点点逼近。书上介绍的是Adaboost，该算法串行的训练基学习器。  </p>
+<p>&emsp;&emsp;下一个学习器是根据上一个学习器的学习效果来确定的。上一个学习器的结果可以修正下一个学习器学习时数据的分布（加权系数）。 如果基学习器算法支持数据加权，就简单加权；不支持加权，就通过重采样来改变分布。每个基学习器由不同分布的数据训练而成，最后所有学习器线性加和时也是要加权的。  </p>
+<p>&emsp;&emsp;算法关键就是怎么决定分布和最终加权的计算。也是数学推导，用了一个不一样的损失函数推导出来的。分布和加权的计算是既定的。能改的只有基学习器参数，基学习器个数，没有其他参数可以调节了。</p>
+<h3 id="GDBT-XGboost"><a href="#GDBT-XGboost" class="headerlink" title="GDBT-XGboost"></a>GDBT-XGboost</h3><p>pass</p>
+<h2 id="回归"><a href="#回归" class="headerlink" title="回归"></a>回归</h2><p>&emsp;&emsp;这里只简单介绍几种回归方法。  </p>
+<p>&emsp;&emsp;首先是<mark>线性回归</mark>，即最小二乘法。不需要调参，散点图可视化数据时，如果发现呈线性就可以尝试。如果可视化时发现明显的曲线特征，就可以使用广义的线性回归，主要是<mark>多项式回归</mark>。这里可以调节的参数就是最大项次。过大容易过拟合，需要交叉验证进行调参。此外设计交叉验证的时候尽量就不去选过大的多项式次数，因为高次对于特征的解释性不好。   </p>
+<p>&emsp;&emsp;如果已经确定是线性的关系了，也不见得就使用最小二乘法。可以尝试<mark>岭回归</mark>和<mark>套索回归</mark>。岭回归使用L1正则，容易获得稀疏参数，可以自动筛选特征，并且对异常值不敏感。套索回归使用L2正则，可以更好的处理过拟合。见过说法，经验上往往L2正则的效果比较好。L1和L2的参数就是正则项的λ。如果L1和L2都使用就是<mark>弹性回归</mark>。   </p>
+<p>&emsp;&emsp;关于时间，没有额外需要进行比较的地方。都是基础模型、基础方法没有太大的差别。关于L1容易获得稀疏，可以看该<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29053993/article/details/90900123">文章</a>。对于L1对异常值更不敏感，可以看该<a target="_blank" rel="noopener" href="https://sm1les.com/2019/01/07/l1-and-l2-regularization/#:~:text=L1%E6%AD%A3%E5%88%99%E5%8C%96%E4%B8%8D%E6%98%93%E6%B1%82%E8%A7%A3%EF%BC%8C%E8%BF%99%E6%98%AF%E5%9B%A0%E4%B8%BA%E7%BB%9D%E5%AF%B9%E5%80%BC%E5%87%BD%E6%95%B0%E9%80%9A%E5%B8%B8%E9%83%BD%E4%B8%8D%E5%A5%BD%E6%B1%82%E8%A7%A3%EF%BC%9B%20L1%E6%AD%A3%E5%88%99%E5%8C%96%E7%9B%B8%E5%AF%B9%E4%BA%8EL2%E6%AD%A3%E5%88%99%E5%8C%96%E5%AF%B9%E5%BC%82%E5%B8%B8%E5%80%BC%E6%95%8F%E6%84%9F%E5%BA%A6%E4%BD%8E%EF%BC%8C%E8%BF%99%E6%98%AF%E5%9B%A0%E4%B8%BA%E5%BD%93%20%7Cwi%7C%20%3E%201%20%7C%20w%20i,i%20%7C%20%3C%20%E2%88%91%20%28w%20i%29%202%20%EF%BC%8C%E4%BB%8E%E8%80%8C%E5%AF%B9%E5%BC%82%E5%B8%B8%E5%80%BC%E6%95%8F%E6%84%9F%E5%BA%A6%E4%BD%8E%E3%80%82">文章</a>。简单来说面对异常值让均方差过大时，迭代需要损失函数中的均方差和正则项同时减小。L2正则偏导乘2，参数变动更大，所以对异常值更敏感。对于为什么L2能更好处理过拟合，我认为是因为它能更好的减少模型的复杂度（不是减少复杂度上限），也是通过更快的减小参数、更多的压缩参数大小实现的。</p>
+<h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><p>&emsp;&emsp;聚类没有固定的评价标准，因而算法繁多。考虑到我现在还没有遇到除特征工程之外用到聚类的方法，K均值足以应对大部分情况。K均值又比较简单不必赘述，以后遇见更加具体的任务情景再补充。</p>
 
       
 
@@ -228,7 +260,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/人工智能//" class="article-tag-list-link color5">人工智能</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -278,7 +332,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://guihaohuai.github.io/2022/05/25/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://guihaohuai.github.io/2022/06/11/%E5%86%8D%E8%AF%BB%E8%A5%BF%E7%93%9C%E4%B9%A6-%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -292,15 +346,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/05/26/hexo-blog/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/06/11/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95-%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95%E6%AF%94%E8%BE%83/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          搭建个人博客:hexo-blog-markdown
+          传统机器学习算法-分类算法比较
         
       </div>
     </a>
   
+  
+    <a href="/2022/05/26/hexo-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">搭建个人博客:hexo-blog-markdown</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -425,6 +484,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
             
             <div class="clearfix"></div>

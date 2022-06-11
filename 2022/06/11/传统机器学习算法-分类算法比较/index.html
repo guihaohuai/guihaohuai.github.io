@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://guihaohuai.github.io">
-  <title>Huai Blog</title>
+  <title>传统机器学习算法-分类算法比较 | Huai Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Huai Blog">
-<meta property="og:url" content="https://guihaohuai.github.io/index.html">
+  <meta name="description" content="@[TOC] 引言如果精度很重要，最好的办法应该是一个一个的尝试，调整参数，选择最好的。如果时间有限，那就要根据不同算法的特点，先尝试最有可能的。如果精度要求差不多就可以，直接按照特定要求选择最好的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="传统机器学习算法-分类算法比较">
+<meta property="og:url" content="https://guihaohuai.github.io/2022/06/11/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95-%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95%E6%AF%94%E8%BE%83/index.html">
 <meta property="og:site_name" content="Huai Blog">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="@[TOC] 引言如果精度很重要，最好的办法应该是一个一个的尝试，调整参数，选择最好的。如果时间有限，那就要根据不同算法的特点，先尝试最有可能的。如果精度要求差不多就可以，直接按照特定要求选择最好的。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-11T10:59:35.072Z">
+<meta property="article:modified_time" content="2022-06-11T11:54:41.112Z">
 <meta property="article:author" content="Gui Haohuai">
+<meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Huai Blog" type="application/atom+xml">
@@ -158,16 +161,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-传统机器学习算法-分类算法比较" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-传统机器学习算法-分类算法比较" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/11/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95-%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95%E6%AF%94%E8%BE%83/">传统机器学习算法-分类算法比较</a>
+    <h1 class="article-title" itemprop="name">
+      传统机器学习算法-分类算法比较
     </h1>
   
 
@@ -182,9 +183,304 @@
       
         <p>@[TOC]</p>
 <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>如果精度很重要，最好的办法应该是一个一个的尝试，调整参数，选择最好的。<br>如果时间有限，那就要根据不同算法的特点，先尝试最有可能的。<br>如果精度要求差不多就可以，直接按照特定要求选择最好的。</p>
-        
+<span id="more"></span>
+
+<p>n个数据、d维度、分成m类别。</p>
+<h2 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h2><p>&emsp;&emsp;首先说一下偏差和方差理论，通常认为模型的error=bias+var 偏差往往是由模型复杂度较小，欠拟合带来的，方差是由于模型过拟合带来的。对于小数据集，用复杂的模型容易过拟合，所以用简单一点的模型如贝叶斯比较好，这就是所谓的小数据集使用高偏差/低方差分类器<a target="_blank" rel="noopener" href="https://www.bookstack.cn/read/machine-learning-yearning-cn/1157ceac468c8626.md">link</a>。</p>
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th align="left">朴素贝叶斯 (可多分类)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>训练时间</td>
+<td align="left">O(n*d) ：在每个数据每个维度计算后验概率</td>
+</tr>
+<tr>
+<td>预测时间</td>
+<td align="left">O(m*d)：不同类别，遍历每个特征相应的后验概率，速度算快</td>
+</tr>
+<tr>
+<td>样本需求</td>
+<td align="left">1. 假设特征之间不相关，无法学习这样的知识：<br>(一个人可能喜欢成龙也喜欢爱情片 却不喜欢成龙参演的爱情片 )<br> 2. 样本特征关联时效果不好，模型简单复杂的情况效果就不好 <br> 3. 特征独立时，效果可能比LR还好 <br> 4.可以人为去掉相关特征呀 <br><br> 5.模型不复杂，可以处理小样本数据<br><br> 6. 注意平滑，要不然数据集未出现过的类别，怎么都是0 <br> 7.连续特征要转化成高斯分布，因为后面计算后验概率是假设其为高斯分布的<br> 8. 文本分类要选择合适的NB以及相应的文本预处理方式</td>
+</tr>
+<tr>
+<td>参数</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td>过拟合</td>
+<td align="left">模型简单不容易过拟合</td>
+</tr>
+<tr>
+<td>解释性</td>
+<td align="left">容易理解，就是概率模型，应该没什么必要可视化</td>
+</tr>
+<tr>
+<td>应用场景</td>
+<td align="left">文本分类（文本情感分类积极/消极  文章属于政治/体育/科技  是否为垃圾邮件）<br> 多分类实时预测 <br> 推荐系统（感觉和多分类实时有密切关系）</td>
+</tr>
+</tbody></table>
+<p>&emsp;&emsp;西瓜书看到的NB都是离散变量，如果有连续变量就要正态分布后用高斯分布的NB。   </p>
+<p>&emsp;&emsp;全是离散变量的情况会出现在文本分类（非情绪）。对于一个词袋模型（特征是不同单词，具体值就是出现在文本的次数）。这个时候想要用NB关键是算后验概率，显然这和纯类别的计算不同，有自己的算法（见例子China）。这时应该使用多项式分布的NB。<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_27009517/article/details/80044431">link1</a>、<a target="_blank" rel="noopener" href="https://www.jiqizhixin.com/articles/2018-07-17-25">link2</a> </p>
+<p>&emsp;&emsp;而另一个文本情绪分类更关心bad出没出现而不是频数。特征集还是出现过的单词组称单词表，用0/1表示出没出现过。这样计算后验概率就像所有特征都是二分类一样来计算就可以了，垃圾邮件的分类和文本情感分类很像。</p>
+<h2 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h2><table>
+<thead>
+<tr>
+<th>算法</th>
+<th align="left">SVM</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>训练时间</td>
+<td align="left">众说纷纭 n方差不多</td>
+</tr>
+<tr>
+<td>预测时间</td>
+<td align="left">支持向量个数<em>d（贝叶斯是类别个数</em>d 大概率贝叶斯时间更短）<br> 按照<a target="_blank" rel="noopener" href="https://www.cxyzjd.com/article/rover2002/106983193">这里</a>的说法是因为使用核函数才需要保存支持向量</td>
+</tr>
+<tr>
+<td>样本需求</td>
+<td align="left">1. 显然大样本训练很麻烦<br> 2. 不是线性可分的显然要用核函数 <br> 3. 对于离散变量用哑变量（独热码减少一个维度） <br> 4.特征数量比样本多很多时，效果不好 <br> 5.特征数量比较少1-1000的时候，样本10000左右 带核SVM；样本50000+  不带核SVM/LR<br><br>我倾向（特征数量比较少1-1000的时候，样本10000左右 带核SVM）这个时候尝试，<br>样本再少的话，直接上贝叶斯</td>
+</tr>
+<tr>
+<td>参数</td>
+<td align="left">核函数  和  软间隔的惩罚系数（实际用sk-learn参数很多，网格调参）</td>
+</tr>
+<tr>
+<td>过拟合</td>
+<td align="left">容易过拟合，要靠调参缓解</td>
+</tr>
+<tr>
+<td>解释性</td>
+<td align="left">应该是线性核有好的解释性，参数越大影响越大。其它核解释性不好</td>
+</tr>
+<tr>
+<td>应用场景</td>
+<td align="left">找不到特别好的应用场景（说明没什么特别好的特点，那就是普通的二分类任务）</td>
+</tr>
+</tbody></table>
+<ul>
+<li>SVM和LR放在一起比较，都是线性模型。LR的决策边界是线性的。   </li>
+<li>都是判别式模型（我的理解判别式模型，直接算出后验概率）   </li>
+<li>生成模型如贝叶斯，借助贝叶斯公式迂回算后验概率，然后不同类别生成多个模型，最后论断要多个模型判别多个类别进行比较。</li>
+</ul>
+<h2 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h2><table>
+<thead>
+<tr>
+<th>算法</th>
+<th align="left">决策树(可多分类，因为选择特征节点的时候显然可以算出“熵增益”)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>训练时间</td>
+<td align="left">O(nd*树深) 树深=log(n) ：贝叶斯是nd，也就是比贝叶斯略大</td>
+</tr>
+<tr>
+<td>预测时间</td>
+<td align="left">O(树深）树深=log(n)</td>
+</tr>
+<tr>
+<td>样本需求</td>
+<td align="left">1. 不对数据有分布假设，所以不必搞成高斯分布<br> 2. 噪声在节点处划分，像分箱就好处理，如果恰好是节点阈值就麻烦了 <br> 3. 冗余属性（特征间相关）影响较小，假设AB两属性相关，先A划分之后，在子树中B就不会是一个很好的划分特征了（再用B划分，增益会变小，因为增益差让A用了），但是也容易造成过拟合吧，毕竟后续可能还要用这个属性 <br> 4.不相关属性（和目标不相关的属性）影响较大，因为他们往往是在书的结尾靠近叶节点开始分支，很容易过拟合 <br> 5.约接近叶节点，样本越少，数据不够，容易过拟合<br><br>上面三点都应该控制深度剪枝来解决（冗余属性，不相关属性，少样本）</td>
+</tr>
+<tr>
+<td>参数</td>
+<td align="left">前剪枝和后剪枝</td>
+</tr>
+<tr>
+<td>过拟合</td>
+<td align="left">复杂度肯定足够才可以用在大数据集上，中等数据集也可。<br>过拟合往往体现在叶节点附近，可以通过剪枝减少。</td>
+</tr>
+<tr>
+<td>解释性</td>
+<td align="left">良好解释性</td>
+</tr>
+<tr>
+<td>应用场景</td>
+<td align="left">快速分析，解释性好，可用在中大数据集。</td>
+</tr>
+</tbody></table>
+<h2 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h2><table>
+<thead>
+<tr>
+<th>算法</th>
+<th align="left">KNN（显然可多分类）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>训练时间</td>
+<td align="left">不用训练直接保存数据</td>
+</tr>
+<tr>
+<td>预测时间</td>
+<td align="left">O(nd)</td>
+</tr>
+<tr>
+<td>样本需求</td>
+<td align="left">1. 对异常值不敏感，邻居有坏蛋，但是是民主投票<br> 2. 存储大<br> 3. 预测慢，预测赶上贝叶斯训练了 <br> 4.样本不平衡时，少量样本基本很难预测的到</td>
+</tr>
+<tr>
+<td>参数</td>
+<td align="left">邻居数量  距离衡量方式</td>
+</tr>
+<tr>
+<td>过拟合</td>
+<td align="left">一般和邻居数即k值有关，准确率先下后上。</td>
+</tr>
+<tr>
+<td>解释性</td>
+<td align="left">就是离得近分一类，解释性到不差。</td>
+</tr>
+<tr>
+<td>应用场景</td>
+<td align="left">应该只能分析用一下，实时性和长期存储都不靠谱。</td>
+</tr>
+</tbody></table>
+<h2 id="LR"><a href="#LR" class="headerlink" title="LR"></a>LR</h2><table>
+<thead>
+<tr>
+<th>算法</th>
+<th align="left">LR（softmax就可以多分类）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>训练时间</td>
+<td align="left">O(ncl)：n是样本数量，l是迭代次数，c是单个样本计算量（包括反向传播过程） <br>考虑到迭代次数应该比特征数d大，所以ncl应该是大于nd的</td>
+</tr>
+<tr>
+<td>预测时间</td>
+<td align="left">O(d)</td>
+</tr>
+<tr>
+<td>样本需求</td>
+<td align="left">1. 特征相关会让模型不稳定，相关特征一个5一个10  和10，5是一样点<br> 2. 要求线性可分（是一个线性分类器）这个限制了它的精度</td>
+</tr>
+<tr>
+<td>参数</td>
+<td align="left">学习率  损失函数   正则化之类的</td>
+</tr>
+<tr>
+<td>过拟合</td>
+<td align="left">复杂度肯定比NB强，所以才会使用中样本。<br>但是在大样本中，它毕竟是一个线性分类器，能力有上限，这时会欠拟合。<br>又不能用SVM核函数的方法，所以时常考虑和SVM作比较。</td>
+</tr>
+<tr>
+<td>解释性</td>
+<td align="left">解释性良好。</td>
+</tr>
+<tr>
+<td>应用场景</td>
+<td align="left">解释性好，肯定是更高级的分析。<br>时间内存都可以商量（不像KNN）而且应用也不差，六边形战士。</td>
+</tr>
+</tbody></table>
+<ul>
+<li>所以到了这里，样本少用NB KNN</li>
+<li>样本中多，用DT SVM LR</li>
+</ul>
+<h2 id="随机森林RF"><a href="#随机森林RF" class="headerlink" title="随机森林RF"></a>随机森林RF</h2><table>
+<thead>
+<tr>
+<th>算法</th>
+<th align="left">随机森林 (DT可多分类，RF自然多分类)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>训练时间</td>
+<td align="left">O(k×nd×树深) 树深=log(n)    决策树复杂度*k  可并行运算</td>
+</tr>
+<tr>
+<td>预测时间</td>
+<td align="left">O(k×树深）树深=log(n)        决策树复杂度*k  可并行运算</td>
+</tr>
+<tr>
+<td>样本需求</td>
+<td align="left">1. 决策树没有先验分布要求，那RF也没有<br> 2. 对于特征特别多可以用，因为会给子树特征的子集<br> 3.缺省也可以处理，但是还是先处理一下数据再跑baseline应该</td>
+</tr>
+<tr>
+<td>参数</td>
+<td align="left">前后剪枝，树的数量，投票方式没准还要stacking</td>
+</tr>
+<tr>
+<td>过拟合</td>
+<td align="left">肯定泛化能力足够好，但是没有调整的意义啊，对吧。<br>顶天开始给一个合适的决策树的参数，有一个baseline就好了。</td>
+</tr>
+<tr>
+<td>解释性</td>
+<td align="left">不好，单个树可以理解，但多个树去解释就很别扭。</td>
+</tr>
+<tr>
+<td>应用场景</td>
+<td align="left">工业和比赛都很少应用<br>可以理解，因为光部署就不可能部署好几十个树<br>但因为集成，泛化能力又比较强，所以用来做baseline不错</td>
+</tr>
+</tbody></table>
+<h2 id="Adaboost"><a href="#Adaboost" class="headerlink" title="Adaboost"></a>Adaboost</h2><table>
+<thead>
+<tr>
+<th>算法</th>
+<th align="left">Adaboost (DT可多分类，自然多分类)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>训练时间</td>
+<td align="left">应该同随机森林（如果用树）O(k×nd×树深) 树深=log(n)   但不可并行</td>
+</tr>
+<tr>
+<td>预测时间</td>
+<td align="left">应该同随机森林（如果用树）O(k×树深）树深=log(n)        但不可并行</td>
+</tr>
+<tr>
+<td>样本需求</td>
+<td align="left">没什么额外需求</td>
+</tr>
+<tr>
+<td>参数</td>
+<td align="left">能改的只有基学习器参数，基学习器个数，没有其他参数可以调节了</td>
+</tr>
+<tr>
+<td>过拟合</td>
+<td align="left">adaboost比它的基学习器容易拟合。<br>但用如树的简单基学习器，实际应用往往很难过拟合。</td>
+</tr>
+<tr>
+<td>解释性</td>
+<td align="left">没什么好解释的，baseline的命。</td>
+</tr>
+<tr>
+<td>应用场景</td>
+<td align="left">也逃不过用来做baseline。</td>
+</tr>
+</tbody></table>
+<h2 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a>GBDT</h2><p>pass</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/pay.PNG">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -215,16 +511,75 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/06/11/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95-%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95%E6%AF%94%E8%BE%83/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://guihaohuai.github.io/2022/06/11/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95-%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95%E6%AF%94%E8%BE%83/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2022/06/11/%E5%86%8D%E8%AF%BB%E8%A5%BF%E7%93%9C%E4%B9%A6-%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">再读西瓜书-传统机器学习方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -244,179 +599,14 @@
 
 
 
-
   
-    <article id="post-再读西瓜书-传统机器学习方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/11/%E5%86%8D%E8%AF%BB%E8%A5%BF%E7%93%9C%E4%B9%A6-%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">再读西瓜书-传统机器学习方法</a>
-    </h1>
   
 
-        
-        <a href="/2022/06/11/%E5%86%8D%E8%AF%BB%E8%A5%BF%E7%93%9C%E4%B9%A6-%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2022-06-11T10:57:55.465Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>@[TOC]</p>
-<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>&emsp;&emsp;这一次读西瓜书，主要是复习传统的机器学习方法。原书作为入门教材，隐藏或略去一些细节，对工程实现不利。从学术的角度，教材求全讲述尽可能多的方法，又不可避免掩盖了一些工业实现的优劣比较。这次复习尽可能对此进行补充，结果将在另一篇文章以表格形式展现。<br><br>&emsp;&emsp;运用相关知识时如果观看表格不能很好回忆起，就来看这篇文章。这篇文章是重翻西瓜书时做的一些简单笔记和梳理，主要记录传统机器学习方法，略去了强化学习等以及特征工程的内容。按照不同的任务目标进行梳理，有分类、回归、聚类。其中分类中可多分类的会在表格中标记出。回归只介绍部分简单模型，不包括分类模型的相关变种。聚类由于评判标准不统一，便不为了求全过多赘述。只有任务目标一致的模型才有一起对比的意义。此外讲述模型的性能评价，此部分与模型训练调整密切相关。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/人工智能//" class="article-tag-list-link color5">人工智能</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/06/11/%E5%86%8D%E8%AF%BB%E8%A5%BF%E7%93%9C%E4%B9%A6-%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/26/hexo-blog/">搭建个人博客:hexo-blog-markdown</a>
-    </h1>
   
 
-        
-        <a href="/2022/05/26/hexo-blog/" class="archive-article-date">
-  	<time datetime="2022-05-26T07:54:14.717Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-搭建博客平台"><a href="#一-搭建博客平台" class="headerlink" title="一.搭建博客平台"></a>一.搭建博客平台</h2><h3 id="1-1-视频教学hexo搭建程序羊hexo搭建博客教程"><a href="#1-1-视频教学hexo搭建程序羊hexo搭建博客教程" class="headerlink" title="1.1 视频教学hexo搭建程序羊hexo搭建博客教程"></a>1.1 视频教学hexo搭建<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?spm_id_from=333.999.0.0">程序羊hexo搭建博客教程</a></h3>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术生活//" class="article-tag-list-link color5">技术生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/05/26/hexo-blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -439,8 +629,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
